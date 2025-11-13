@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
-import Sidebar from '../components/Sidebar';
-import VideoGrid from '../components/VideoGrid';
+import SmartSidebar from '../components/SmartSidebar';  // Cambiado de Sidebar a SmartSidebar
+import VideoShowcase from '../components/VideoShowcase'; // Cambiado de VideoGrid a VideoShowcase
 import Footer from '../components/Footer';
 import { categories } from '../data/categories';
 import { videos } from '../data/videos';
@@ -28,12 +28,12 @@ function App() {
         onLanguageChange={setLanguage}
       />
       <div className="main-container">
-        <Sidebar 
+        <SmartSidebar 
           categories={categories}
           selectedCategory={selectedCategory}
           onCategorySelect={setSelectedCategory}
         />
-        <VideoGrid videos={filteredVideos} />
+        <VideoShowcase videos={filteredVideos} />
       </div>
       <Footer />
     </div>
